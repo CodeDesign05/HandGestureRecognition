@@ -2,6 +2,9 @@
 import numpy as np
 import cv2
 import math
+import random
+import matplotlib
+import pandas as pd
 
 # Open Camera
 capture = cv2.VideoCapture(0)
@@ -83,7 +86,7 @@ while capture.isOpened():
 
             cv2.line(crop_image, start, end, [0, 255, 0], 2)
 
-        # Print number of fingers
+        
         if count_defects == 0:
             cv2.putText(frame, "GAALI NOT ALLOW", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2,(0,0,255),2)
         elif count_defects == 1:
@@ -99,7 +102,6 @@ while capture.isOpened():
     except:
         pass
 
-    # Show required images
     cv2.imshow("Gesture", frame)
     all_image = np.hstack((drawing, crop_image))
     cv2.imshow('Contours', all_image)
