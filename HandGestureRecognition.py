@@ -7,7 +7,8 @@ import math
 capture = cv2.VideoCapture(0)
 
 while capture.isOpened():
-
+  #intro hai bhai 
+# get into this ga=me
     # Capture frames from the camera
     ret, frame = capture.read()
 
